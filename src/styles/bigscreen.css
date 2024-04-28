@@ -1,0 +1,180 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.overlay {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay img {
+  z-index: 9999;
+  height: 100%;
+  width: 50%;
+  background: transparent;
+}
+
+.container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+}
+
+.imgname {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-family: cursive;
+  color: #ffffff61;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 1000;
+}
+
+.previous {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.previous img {
+  transform: rotate(180deg);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.present {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 998;
+}
+
+.present .pic {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  cursor: url(../assets/icons/hand1.gif), auto;
+  object-fit: scale-down;
+  background: black;
+  z-index: 999;
+  transform: rotate(0);
+}
+
+.next {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.next img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.operation {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.operation img {
+  width: 21px;
+  height: 21px;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+
+.operation .zoomin {
+  transform: rotate(65deg);
+}
+
+.operation #rclock {
+  transform: rotate(190deg);
+}
+
+.setopacity {
+  opacity: 0;
+}
+
+.fadein {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeout {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.disablediv {
+  pointer-events: none;
+}

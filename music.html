@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Music</title>
+  <link rel="stylesheet" href="./src/styles/music.css">
+  <script type="text/javascript" src="id3.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div id="upload" class="upload">Upload Music</div>
+    <div id="downloadsvg" class="download">
+      <img src="./src/assets/icons/down-gray.svg" alt="Download Images" />
+    </div>
+    <div id="deletesvg" class="delete">
+      <img src="./src/assets/icons/del-gray.svg" alt="Delete Images">
+    </div>
+    <div id="refreshsvg" class="refresh">
+      <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 500.552 500.552" xml:space="preserve">
+        <g>
+          <g>
+            <g>
+              <path d="M452.568,329.917l13.944,4.336c-46.326,119.462-180.724,178.75-300.186,132.424
+				                         C100.939,441.321,50.532,387.749,29.2,320.941c-1.343-4.211-5.845-6.535-10.056-5.192c-4.211,1.343-6.535,5.845-5.192,10.056
+				                         c41.682,130.47,181.239,202.447,311.709,160.765c71.752-22.923,129.197-77.213,156.131-147.557l15.2,4.712l3.56-89.72
+				                         L452.568,329.917z" />
+              <path d="M34,166.381C80.303,46.91,214.689-12.405,334.161,33.898c65.98,25.572,116.682,79.857,137.695,147.427
+				                          c1.049,3.336,4.143,5.604,7.64,5.6c0.813,0,1.622-0.121,2.4-0.36c4.219-1.312,6.576-5.795,5.265-10.014
+				                          c0-0.001,0-0.001-0.001-0.002C446.474,45.765,307.469-27.274,176.685,13.413C104.098,35.994,45.877,90.619,18.72,161.621
+				                          l-15.16-4.712L0,246.629l47.944-75.912L34,166.381z" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="nav"></div>
+  <ol class="content">
+    <li><input id="selectall" class="selectall" type="checkbox"></li>
+    <li class="mname"><span class="name">Music Name</span></li>
+    <li class="martist">Artist</li>
+    <li class="operation">Operation</li>
+    <li class="mduration">Duration</li>
+    <li class="mformat">Format</li>
+    <li class="msize">Size</li>
+  </ol>
+  <div id="mucontainer" class="mucontainer">
+    <div class="sbox">
+      <input class="sinput" type="checkbox" onclick="ucheckbox();" name="select" />
+      <div data-value="Media/MasterSong.mp3" class="sname">Local Music</div>
+      <div class="soperation">
+        <img class="splay" onclick="splay();" onmouseover="hover(this);" onmouseout="unhover(this);"
+          src="./src/assets/icons/play-gray.svg" alt="Play Song" />
+        <img class="sdown" onclick="sdown();" onmouseover="hover1(this);" onmouseout="unhover1(this);"
+          src="./src/assets/icons/down-gray.svg" alt="Download Song" />
+        <img class="sdel" onclick="sdel();" onmouseover="hover2(this);" onmouseout="unhover2(this);"
+          src="./src/assets/icons/del-gray.svg" alt="Delete Song" />
+      </div>
+      <div class="sartist">Chitranjan Gupta</div>
+      <div class="sduration">3:00</div>
+      <div class="sformat">MP3</div>
+      <div class="ssize">4.00MB</div>
+    </div>
+  </div>
+  <div class="song_panel">
+    <canvas id="analyser" class="analyser"></canvas>
+    <div id="song_progress" class="song_progress">
+      <div id="bar" class="part"></div>
+      <div id="thumb" class="thumb"></div>
+    </div>
+    <div class="song_info">
+      <div id="album" class="album">
+        <img id="album_img" class="album_img" src="./src/assets/icons/default-album-cover.png" />
+      </div>
+      <span id="song_name" class="song_name"></span>
+      <br>
+      <span id="song_artist" class="song_artist"></span>
+      <div class="dropdownBackground">
+        <span class="darrow"></span>
+      </div>
+    </div>
+    <div class="song_attr">
+      <div id="backward" class="backward">
+        <svg version="1.1" id="back" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 480.026 480.026" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M475.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472
+                       c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312l-134.368,149.28c-4.224,4.704-5.312,11.456-2.72,17.216
+                       c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160
+                       C481.394,244.653,481.394,235.373,475.922,229.325z" />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M267.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472
+                      c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312L4.114,389.293c-4.224,4.704-5.312,11.456-2.72,17.216
+                      c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160
+                      C273.394,244.653,273.394,235.373,267.922,229.325z" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div id="play" class="play">
+        <svg version="1.1" id="pl" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+          y="0px" viewBox="0 0 320.001 320.001" xml:space="preserve">
+          <path d="M295.84,146.049l-256-144c-4.96-2.784-11.008-2.72-15.904,0.128C19.008,5.057,16,10.305,16,16.001v288
+	               c0,5.696,3.008,10.944,7.936,13.824c2.496,1.44,5.28,2.176,8.064,2.176c2.688,0,5.408-0.672,7.84-2.048l256-144
+	                c5.024-2.848,8.16-8.16,8.16-13.952S300.864,148.897,295.84,146.049z" />
+        </svg>
+        <svg id="pa" xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24">
+          <path fill-rule="evenodd" d="M0 0h6v24H0zM12 0h6v24h-6z"></path>
+        </svg>
+      </div>
+      <div id="forward" class="forward">
+        <svg version="1.1" id="for" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 480.026 480.026" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M475.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472
+			                 c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312l-134.368,149.28c-4.224,4.704-5.312,11.456-2.72,17.216
+			                 c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160
+			                 C481.394,244.653,481.394,235.373,475.922,229.325z" />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M267.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472
+			                c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312L4.114,389.293c-4.224,4.704-5.312,11.456-2.72,17.216
+			                c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160
+			                C273.394,244.653,273.394,235.373,267.922,229.325z" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="volume">
+        <svg version="1.1" id="vol" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 480 480" xml:space="preserve">
+          <path d="M278.944,17.577c-5.568-2.656-12.128-1.952-16.928,1.92L106.368,144.009H32c-17.632,0-32,14.368-32,32v128
+	            c0,17.664,14.368,32,32,32h74.368l155.616,124.512c2.912,2.304,6.464,3.488,10.016,3.488c2.368,0,4.736-0.544,6.944-1.6
+	            c5.536-2.656,9.056-8.256,9.056-14.4v-416C288,25.865,284.48,20.265,278.944,17.577z" />
+          <path d="M368.992,126.857c-6.304-6.208-16.416-6.112-22.624,0.128c-6.208,6.304-6.144,16.416,0.128,22.656
+	            C370.688,173.513,384,205.609,384,240.009s-13.312,66.496-37.504,90.368c-6.272,6.176-6.336,16.32-0.128,22.624
+	            c3.136,3.168,7.264,4.736,11.36,4.736c4.064,0,8.128-1.536,11.264-4.64C399.328,323.241,416,283.049,416,240.009
+	            S399.328,156.777,368.992,126.857z" />
+          <path d="M414.144,81.769c-6.304-6.24-16.416-6.176-22.656,0.096c-6.208,6.272-6.144,16.416,0.096,22.624
+	             C427.968,140.553,448,188.681,448,240.009s-20.032,99.424-56.416,135.488c-6.24,6.24-6.304,16.384-0.096,22.656
+	             c3.168,3.136,7.264,4.704,11.36,4.704c4.064,0,8.16-1.536,11.296-4.64C456.64,356.137,480,299.945,480,240.009
+	             S456.64,123.881,414.144,81.769z" />
+        </svg>
+        <svg version="1.1" id="mute" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+          <g>
+            <g>
+              <polygon points="504.704,209.565 484.097,188.958 436.11,236.945 388.124,188.958 367.517,209.565 415.504,257.551
+                  367.517,305.538 388.124,326.145 436.11,278.157 484.097,326.145 504.704,305.538 456.716,257.551 		" />
+            </g>
+          </g>
+          <g>
+            <g>
+              <rect x="7.296" y="155.547" width="116.58" height="203.82" />
+            </g>
+          </g>
+          <g>
+            <g>
+              <polygon points="153.021,139.81 153.021,374.928 327.891,512 327.891,0 		" />
+            </g>
+          </g>
+        </svg>
+        <input id="volumeSlider" type="range" name="volume" class="player_slider" min="0" max="1" step="0.05"
+          value="0" />
+      </div>
+      <div id="repeat" class="repeat">
+        <svg version="1.1" id="rep" name="Repeat" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500.552 500.552" xml:space="preserve">
+          <g>
+            <g>
+              <g>
+                <path d="M452.568,329.917l13.944,4.336c-46.326,119.462-180.724,178.75-300.186,132.424
+                                   C100.939,441.321,50.532,387.749,29.2,320.941c-1.343-4.211-5.845-6.535-10.056-5.192c-4.211,1.343-6.535,5.845-5.192,10.056
+                                   c41.682,130.47,181.239,202.447,311.709,160.765c71.752-22.923,129.197-77.213,156.131-147.557l15.2,4.712l3.56-89.72
+                                   L452.568,329.917z" />
+                <path d="M34,166.381C80.303,46.91,214.689-12.405,334.161,33.898c65.98,25.572,116.682,79.857,137.695,147.427
+                                    c1.049,3.336,4.143,5.604,7.64,5.6c0.813,0,1.622-0.121,2.4-0.36c4.219-1.312,6.576-5.795,5.265-10.014
+                                    c0-0.001,0-0.001-0.001-0.002C446.474,45.765,307.469-27.274,176.685,13.413C104.098,35.994,45.877,90.619,18.72,161.621
+                                    l-15.16-4.712L0,246.629l47.944-75.912L34,166.381z" />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <button id="pip" class="pip">PIP</button>
+      <div class="duration">
+        <span class="now">00:00</span>
+        <span class="s">/</span>
+        <span class="full">00:00</span>
+      </div>
+    </div>
+    <audio id="song" class="song" src="./src/assets/audio/play.mp3" />
+  </div>
+  <script type="text/javascript" src="music.js"></script>
+</body>
+
+</html>

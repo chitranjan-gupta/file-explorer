@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 53px;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 53px;
+  left: 0;
+  background: #dadee2;
+  display: block;
+  transform: scaleY(.5);
+}
+
+.upload {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 108px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  z-index: 1;
+  background: #009688;
+  font-family: cursive;
+  font-size: x-small;
+}
+
+.download {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 135px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #00000029;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.download svg {
+  width: 18px;
+  height: 17px;
+  fill: #00000029;
+}
+
+.delete {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 179px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #00000029;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.delete svg {
+  width: 18px;
+  height: 17px;
+  fill: #00000029;
+}
+
+
+.refresh {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 223px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #00000029;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.refresh svg {
+  width: 18px;
+  height: 17px;
+  fill: #000000c7;
+}
+
+.refresh:hover {
+  background: #2baf2b;
+  border: 1px solid #2baf2b;
+}
+
+.refresh:hover svg {
+  fill: white;
+}
+
+.nav {
+  position: relative;
+  top: 55px;
+  left: 0px;
+  width: 100%;
+  height: 53px;
+}
+
+.nav::after {
+  content: '';
+  position: relative;
+  height: 1px;
+  width: 100%;
+  top: 55px;
+  left: 0;
+  background: #dadee2;
+  display: block;
+  transform: scaleY(.5);
+}

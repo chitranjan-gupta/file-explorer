@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" type="text/css" href="./src/styles/picture.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div id="upload" class="upload">Upload Image</div>
+    <div id="downloadsvg" class="download">
+      <img src="./src/assets/icons/down-gray.svg" alt="Download Images" />
+    </div>
+    <div id="deletesvg" class="delete">
+      <img src="./src/assets/icons/del-gray.svg" alt="Delete Images">
+    </div>
+    <div id="refreshsvg" class="refresh">
+      <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 500.552 500.552" xml:space="preserve">
+        <g>
+          <g>
+            <g>
+              <path d="M452.568,329.917l13.944,4.336c-46.326,119.462-180.724,178.75-300.186,132.424
+                                 C100.939,441.321,50.532,387.749,29.2,320.941c-1.343-4.211-5.845-6.535-10.056-5.192c-4.211,1.343-6.535,5.845-5.192,10.056
+                                 c41.682,130.47,181.239,202.447,311.709,160.765c71.752-22.923,129.197-77.213,156.131-147.557l15.2,4.712l3.56-89.72
+                                 L452.568,329.917z" />
+              <path d="M34,166.381C80.303,46.91,214.689-12.405,334.161,33.898c65.98,25.572,116.682,79.857,137.695,147.427
+                                  c1.049,3.336,4.143,5.604,7.64,5.6c0.813,0,1.622-0.121,2.4-0.36c4.219-1.312,6.576-5.795,5.265-10.014
+                                  c0-0.001,0-0.001-0.001-0.002C446.474,45.765,307.469-27.274,176.685,13.413C104.098,35.994,45.877,90.619,18.72,161.621
+                                  l-15.16-4.712L0,246.629l47.944-75.912L34,166.381z" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="nav"></div>
+
+  <div id="imagealbum" class="imagealbum">
+
+    <div class="box">
+      <div class="imgBox">
+        <img src="./src/assets/icons/default-album-cover.png" />
+      </div>
+      <div class="details">
+        <div class="alname">Bablu(1)</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="selallimg">
+    <input id="selectall" type="checkbox" name="Select All" />
+    <label>Select All</label>
+  </div>
+  <div id="imcontainer" class="container">
+    <div class="box boxhover">
+      <div class="imgBox">
+        <img src="./src/assets/icons/default-album-cover.png" />
+      </div>
+      <div class="details scalediv">
+        <input class="sinput" onclick="ucheckbox();" type="checkbox" />
+        <div class="func">
+          <img src="./src/assets/icons/down-white.svg" class="downimage" onclick="downimage();"
+            onmouseover="hover(this);" onmouseout="unhover(this);" alt="Download Image" />
+          <img src="./src/assets/icons/full-white.svg" class="fullimage" onclick="fullimage()"
+            onmouseover="hover1(this);" onmouseout="unhover1(this);" alt="Full Screen Image" />
+          <img src="./src/assets/icons/del-white.svg" class="deimage" onclick="delimage();" onmouseover="hover2(this);"
+            onmouseout="unhover2(this);" alt="Delete Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="picture.js"></script>
+</body>
+
+</html>

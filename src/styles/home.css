@@ -1,0 +1,355 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #888888;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+#device {
+  position: relative;
+  top: 84px;
+  left: 347px;
+}
+
+#devicename {
+  font-weight: bolder;
+  font-size: larger;
+  font-family: cursive;
+  margin-right: 14px;
+  color: #000000bf;
+  text-shadow: rgba(255, 0, 255, 0.7) 3px 2px 0px, rgba(0, 255, 255, 0.7) 4px 1px 0px, rgba(0, 255, 0, 0.7) 4px 2px 0px, rgba(0, 0, 255, 0.7) 4px 3px 0px;
+}
+
+#deviceversion {
+  font-family: cursive;
+  font-size: small;
+}
+
+.deviceimg {
+  position: relative;
+  top: 50px;
+  left: 57px;
+  width: 300px;
+  height: 400px;
+}
+
+.deviceimg img {
+  width: 66%;
+  height: 100%;
+}
+
+.list {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: -294px;
+  left: 347px;
+}
+
+.list .picture {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 46px;
+}
+
+.list .picture div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list .picture div:hover {
+  background: #f44336;
+  border: 1px solid #f44336;
+}
+
+.list .picture div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 15px;
+  margin: 0;
+  padding: 0;
+  fill: #f44336;
+  z-index: 1;
+}
+
+.list .picture div:hover #pic {
+  fill: white;
+}
+
+.list .picture span {
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #888888;
+  cursor: default;
+}
+
+.list .video {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 46px;
+}
+
+.list .video div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list .video div:hover {
+  background: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.list .video div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 14px;
+  margin: 0;
+  padding: 0;
+  fill: #2196f3;
+}
+
+.list .video div:hover #vid {
+  fill: white;
+}
+
+.list .video span {
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #888888;
+  cursor: default;
+}
+
+.list .music {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 46px;
+}
+
+.list .music div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list .music div:hover {
+  background: #ff9800;
+  border: 1px solid #ff9800;
+}
+
+.list .music div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 14px;
+  margin: 0;
+  padding: 0;
+  fill: #ff9800;
+}
+
+.list .music div:hover #mus {
+  fill: white;
+}
+
+.list .music span {
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #888888;
+  cursor: default;
+}
+
+.list .document {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 0px;
+}
+
+.list .document div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list .document div:hover {
+  background: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+.list .document div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 14px;
+  margin: 0;
+  fill: #4caf50;
+  padding: 0;
+}
+
+.list .document div:hover #doc {
+  fill: white;
+}
+
+.list .document span {
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #888888;
+  cursor: default;
+}
+
+.list0 {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: -294px;
+  left: 347px;
+}
+
+.list0 .files {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 46px;
+}
+
+.list0 .files div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list0 .files div:hover {
+  background: #9c27b0;
+  border: 1px solid #9c27b0;
+}
+
+.list0 .files div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 14px;
+  margin: 0;
+  padding: 0;
+  fill: #9c27b0;
+}
+
+.list0 .files div:hover #file {
+  fill: white;
+}
+
+.list0 .apps {
+  width: 100px;
+  float: left;
+  cursor: pointer;
+  margin: 0 40px 0 0;
+  position: relative;
+  margin-right: 46px;
+}
+
+.list0 .apps div {
+  width: 96px;
+  height: 97px;
+  border: 1px solid;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.list0 .apps div:hover {
+  background: #e91e63;
+  border: 1px solid #e91e63;
+}
+
+.list0 .apps div svg {
+  width: 45px;
+  height: 68px;
+  position: relative;
+  left: 25px;
+  top: 14px;
+  margin: 0;
+  padding: 0;
+  fill: #e91e63;
+}
+
+.list0 .apps div:hover #app {
+  fill: white;
+}
+
+.range {
+  position: relative;
+  left: 347px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 609px;
+  height: 18px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+#range1 {
+  top: -249px;
+  background-image: linear-gradient(left, #FF7535, #FF7535 20%, #80808075 20%, #80808075 100%);
+  background-image: -webkit-linear-gradient(left, #FF7535, #FF7535 20%, #80808075 20%, #80808075 100%);
+}
+
+#range2 {
+  top: -232px;
+  background-image: linear-gradient(left, #2196f3, #2196f3 7%, #80808075 7%, #80808075 100%);
+  background-image: -webkit-linear-gradient(left, #2196f3, #2196f3 7%, #80808075 7%, #80808075 100%);
+}

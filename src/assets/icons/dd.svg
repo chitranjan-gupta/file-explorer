@@ -1,0 +1,8 @@
+<svg height="160" width="160">
+	<circle cx="80" cy="80" r="71.5" stroke="#0003" stroke-width="0.5" fill="none"></circle>
+	<circle cx="80" cy="80" r="64" stroke="#0003" stroke-width="0.5" fill="none"></circle>
+	<circle cx="80" cy="80" r="56.5" stroke="#0003" stroke-width="0.5" fill="none"></circle>
+	<circle cx="80" cy="80" r="49" stroke="#0003" stroke-width="0.5" fill="none"></circle>
+	<circle cx="80" cy="80" r="41.5" stroke="#0003" stroke-width="0.5" fill="none"></circle>
+	<circle cx="80" cy="80" r="32" stroke="#0007" stroke-width="6" fill="none"></circle>
+</svg>

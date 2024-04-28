@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Files</title>
+  <link rel="stylesheet" type="text/css" href="./src/styles/files.css">
+</head>
+
+<body>
+
+  <div class="header">
+    <div title="Upload File" id="upload" class="upload">Upload File</div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/down-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/down-gray.svg');" id="download" title="Download File"
+      class="download operationimgdeactive">
+      <img src="./src/assets/icons/down-gray.svg" alt="Download" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/nfolder-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/nfolder-gray.svg');" id="folder" title="New Folder"
+      class="folder operationimgactive">
+      <img src="./src/assets/icons/nfolder-gray.svg" alt="New Folder" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/nfolder-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/nfolder-gray.svg');" id="file" title="New File"
+      class="file operationimgactive">
+      <img src="./src/assets/icons/nfolder-gray.svg" alt="New File" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/rename-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/rename-gray.svg');" id="rename" title="Rename"
+      class="rename operationimgdeactive">
+      <img src="./src/assets/icons/rename-gray.svg" alt="Rename" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/cut-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/cut-gray.svg');" id="cut" title="Cut"
+      class="cut operationimgdeactive">
+      <img src="./src/assets/icons/cut-gray.svg" alt="Cut" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/copy-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/copy-gray.svg');" id="copy" title="Copy"
+      class="copy operationimgdeactive">
+      <img src="./src/assets/icons/copy-gray.svg" alt="Copy" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/paste-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/paste-gray.svg');" id="paste" title="Paste"
+      class="paste operationimgdeactive">
+      <img src="./src/assets/icons/paste-gray.svg" alt="Paste" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/del-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/del-gray.svg');" id="delete" title="Delete"
+      class="delete operationimgdeactive">
+      <img src="./src/assets/icons/del-gray.svg" alt="Delete" />
+    </div>
+    <div onmouseover="filexplorer.hover(this,'./src/assets/icons/refresh-white.svg');"
+      onmouseout="filexplorer.unhover(this,'./src/assets/icons/refresh-gray.svg');" id="refresh" title="Refresh"
+      class="refresh operationimgactive">
+      <img src="./src/assets/icons/refresh-gray.svg" alt="Refresh">
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="current_folder_location">
+
+    </div>
+    <div class="search_bar_container">
+      <div class="search_file_input">
+        <input placeholder="Enter The Name Of File / Folder" id="search_file_input" type="text" />
+      </div>
+      <div id="search_file_btn" class="search_file_btn">
+        <img src="./src/assets/icons/search.svg" alt="Search File/Folder">
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="tree_item_container">
+        <ul class="tree_item_pan">
+          <li id="File_Category">
+            <div title="File Category" class="open_category">
+              <div onclick="filexplorer.downOpen(this);" class="category_btn downopen">
+
+              </div>
+              <div class="category_folder_icon">
+
+              </div>
+              <span class="category_folder_name">File Category</span>
+            </div>
+            <ul class="tree_category displaynone">
+              <li title="Latest Files" class="category_container">
+                <div class="category_folder_icon">
+
+                </div>
+                <span class="category_folder_name">Latest Files</span>
+              </li>
+              <li title="Big Files" class="category_container">
+                <div class="category_folder_icon">
+
+                </div>
+                <span class="category_folder_name">Big Files</span>
+              </li>
+              <li title="Compressed Files" class="category_container">
+                <div class="category_folder_icon">
+
+                </div>
+                <span class="category_folder_name">Compressed Files</span>
+              </li>
+              <li title="Installed Packages" class="category_container">
+                <div class="category_folder_icon">
+
+                </div>
+                <span class="category_folder_name">Installed Packages</span>
+              </li>
+            </ul>
+          </li>
+          <li id="Interal_Storage">
+            <div title="Phone Storage" class="open_category">
+              <div onclick="filexplorer.downOpen(this);" class="category_btn downopen">
+
+              </div>
+              <div class="category_folder_icon">
+
+              </div>
+              <span class="category_folder_name">Phone Storage</span>
+            </div>
+            <ul class="tree_item displaynone">
+              <li id="">
+                <div title="Chitranjan" class="tree_leaf">
+                  <div onclick="filexplorer.downOpen(this);" class="leaf_btn downopen">
+
+                  </div>
+                  <div class="leaf_folder_icon">
+
+                  </div>
+                  <span class="leaf_folder_name">Chitranjan</span>
+                </div>
+                <ul class="tree_item displaynone">
+                  <li id="">
+                    <div title="Video" class="tree_leaf">
+                      <div onclick="filexplorer.downOpen(this);" class="leaf_btn downopen">
+
+                      </div>
+                      <div class="leaf_folder_icon">
+
+                      </div>
+                      <span class="leaf_folder_name">Video</span>
+                    </div>
+                    <ul class="tree_item displaynone">
+                      <li id="">
+                        <div title="New" class="tree_leaf">
+                          <div onclick="filexplorer.downOpen(this);" class="leaf_btn downopen">
+
+                          </div>
+                          <div class="leaf_folder_icon">
+
+                          </div>
+                          <span class="leaf_folder_name">New</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="External_Sdcard_Storage">
+            <div title="SD Card" class="open_category">
+              <div onclick="filexplorer.downOpen(this);" class="category_btn downopen">
+
+              </div>
+              <div class="category_folder_icon">
+
+              </div>
+              <span class="category_folder_name">SD Card (Permission needed)</span>
+            </div>
+            <ul class="tree_item displaynone">
+              <li id="">
+                <div title="Android" class="tree_leaf">
+                  <div onclick="filexplorer.downOpen(this);" class="leaf_btn downopen">
+
+                  </div>
+                  <div class="leaf_folder_icon">
+
+                  </div>
+                  <span class="leaf_folder_name">Android</span>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="file_item_container" class="file_item_container">
+        <!-- <div data-type="FOLDER" title="Chitranjan" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon folder_icon">
+
+            </div>
+            <span class="file_name">Chitranjan</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input placeholder="New Folder" type="text"/>
+            </span>
+          </div>
+          <div data-type="FOLDER" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon folder_icon" title="Chitranjan">
+
+            </div>
+            <span class="file_name" title="Chitranjan">Chitranjan</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="FOLDER" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon folder_icon" title="Chitranjan">
+
+            </div>
+            <span class="file_name" title="Chitranjan">Chitranjan</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="IMAGE" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_img_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.png</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="VIDEO" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_video_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.mp4</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="PDF" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_pdf_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.pdf</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="FOLDER" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon folder_icon" title="Chitranjan">
+
+            </div>
+            <span class="file_name" title="Chitranjan">Chitranjan</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="FOLDER" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon folder_icon" title="Chitranjan">
+            </div>
+            <span class="file_name" title="Chitranjan">Chitranjan</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="HTML" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_html_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.html</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="CSS" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_css_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.css</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="MUSIC" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_song_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.mp3</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="TEXT" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_text_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.txt</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="COMPRESSED" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" tabindex="-1" class="file_item" path="">
+            <div class="file_type_icon file_zip_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android.zip</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div>
+          <div data-type="BLANK" onfocus="filexplorer.onSelect(this);" onblur="filexplorer.deSelect(this);" class="file_item" path="" tabindex="-1">
+            <div class="file_type_icon file_blank_icon" title="Android">
+            </div>
+            <span class="file_name" title="Android">Android</span>
+            <span class="file_rename">
+              <input type="text"/>
+            </span>
+            <span class="file_createFolder">
+              <input type="text"/>
+            </span>
+          </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="file_View">
+    <div id="file_icon_view" class="">
+
+    </div>
+    <ul>
+      <li id="file_name_view" class="file_name_view"></li>
+      <li id="file_date_view" class="file_date_view"></li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="files.js" charset="utf-8"></script>
+</body>
+
+</html>

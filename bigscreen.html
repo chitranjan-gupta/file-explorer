@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./src/styles/bigscreen.css">
+  <title>Big Screen</title>
+</head>
+
+<body>
+  <div id="overlay" class="overlay">
+    <img src="./src/assets/icons/logo.png" alt="Preview Image" />
+  </div>
+  <div id="container" class="container">
+    <div id="imgname" class="imgname fadeout setopacity">
+      IMG-45252552524 (1/1)
+    </div>
+    <div id="previous" class="previous fadeout setopacity">
+      <img src="./src/assets/icons/pre-white.svg" alt="Previous Image">
+    </div>
+    <div class="present">
+      <img id="pic" class="pic" src="./src/assets/icons/aas.png" alt="Presentation Image" />
+    </div>
+    <div id="next" class="next fadeout setopacity">
+      <img src="./src/assets/icons/pre-white.svg" alt="Next Image">
+    </div>
+    <div id="operation" class="operation fadeout setopacity">
+      <img id="zoomout" class="zoomin" src="./src/assets/icons/zoomin.svg" alt="Zoom In" />
+      <img id="zoomin" class="zoomout" src="./src/assets/icons/zoomout.svg" alt="Zoom Out" />
+      <img id="rclock" src="./src/assets/icons/rot.svg" alt="Rotate Clockwise" />
+      <img id="ranticlock" src="./src/assets/icons/rot.svg" alt="Rotate Anticlockwise" />
+      <img id="desktop" src="./src/assets/icons/vidplay.svg" alt="FullScreen Image" />
+      <img id="eclose" src="./src/assets/icons/full-white.svg" alt="Exit" />
+    </div>
+  </div>
+  <script type="text/javascript" src="bigscreen.js"></script>
+  <script src="fetch.js" charset="utf-8"></script>
+</body>
+
+</html>
